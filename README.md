@@ -10,7 +10,7 @@ Execute the program by running following command
 
 ``./concurrent_lab3 ``
 
-Note : 	Makefile has all the relevent libraries linked in the compile time. Refer it for more details
+Note : 	Makefile has all the relevent libraries linked in the compile time. Refer it for more details.
 		Also please use a newest gcc compiler version to compile the code.
 
 
