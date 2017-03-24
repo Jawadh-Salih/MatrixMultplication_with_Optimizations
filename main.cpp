@@ -69,7 +69,7 @@ int main(){
         }
         else{
             double speedUp = get_speedup(mean_parallel,mean_serial);
-            double speedUp_new = get_speedup(mean_optimized,mean_serial);
+            double speedUp_new = get_speedup(mean_optimized,mean_parallel);
             double speedUp_gained = speedUp_new - speedUp;
 
             cout << n << "\t" << mean_serial << "\t" << mean_parallel << "\t" << mean_optimized<< "\t"
