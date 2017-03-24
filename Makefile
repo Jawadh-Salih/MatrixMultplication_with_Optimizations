@@ -12,9 +12,9 @@ objects  := $(patsubst %.C, %.o, $(srcfiles))
 all: $(appname)
 
 $(appname): $(objects)
-	$(CXX) -c -O3 -fopenmp optimized.cpp
+	$(CXX) -c -O3 -msse3 -fopenmp optimized.cpp
 
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(appname) $(objects) $(LDLIBS) optimized.o
+	$(CXX) $(CXXFLAGS) -O3 $(LDFLAGS) -o $(appname) $(objects) $(LDLIBS) optimized.o
 
 
 
