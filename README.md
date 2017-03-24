@@ -8,6 +8,6 @@ First ``make`` the Project to compile it. Run the following command
 
 Execute the program by running following command
 
-``./concurrent_lab31 ``
+``./concurrent_lab3 ``
 
 
