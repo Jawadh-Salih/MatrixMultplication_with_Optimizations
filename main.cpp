@@ -25,8 +25,9 @@ int main(){
 
     srand(time(NULL));
 
-    int n=0,sample_cnt = 20;
-    cout << "N" << "\t" << "Serial " << "\t\t" << "Parallel "<< "\t" << "Optimized " << "\t"
+    int n=0,sample_cnt = 30;
+    cout << "Sample Count :" <<sample_cnt << endl;
+    cout << "N" << "\t" << "Serial(ms)" << "\t\t" << "Parallel(ms)"<< "\t" << "Optimized(ms)" << "\t"
          <<"SpeedUp "<< "\t" << "New SpeedUp " << "\t" <<"Gained SpeedUp"<< "\t" << endl;
     for(int n = 100 ; n < 1001; n+= 100){
 
@@ -71,7 +72,7 @@ int main(){
             double speedUp_new = get_speedup(mean_optimized,mean_serial);
             double speedUp_gained = speedUp_new - speedUp;
 
-            cout << n << "\t" << mean_serial << "ms\t" << mean_parallel << "ms\t" << mean_optimized<< "ms\t"
+            cout << n << "\t" << mean_serial << "\t" << mean_parallel << "\t" << mean_optimized<< "\t"
                  <<speedUp << "\t\t" <<speedUp_new<< "\t\t" <<speedUp_gained<< "\t" << endl;
         }
     }
