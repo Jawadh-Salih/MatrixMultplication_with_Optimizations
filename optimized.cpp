@@ -9,13 +9,15 @@
 
 void transpose(int size, double** m)
 {
-    for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
+    int i,j;
+    #pragma omp parallel for private (i,j)
+    for ( i = 0; i < size; i++) {
+        for ( j = i + 1; j < size; j++) {
             std::swap(m[i][j], m[j][i]);
         }
     }
 }
-double optimized_matrix_mul1(int n,double ** O,double ** A,double ** B){
+double optimized_matrix_mul_sse3(int n,double ** O,double ** A,double ** B){
     double start,end;
     start= omp_get_wtime();
     int i,j,k;

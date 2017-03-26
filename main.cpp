@@ -6,6 +6,7 @@
 #include <omp.h>
 #include "optimized.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 using namespace std;
 
@@ -25,9 +26,9 @@ int main(){
 
     srand(time(NULL));
 
-    int n=0,sample_cnt = 30;
+    int n=0,sample_cnt = 35;
     cout << "Sample Count :" <<sample_cnt << endl;
-    cout << "N" << "\t" << "Serial(ms)" << "\t\t" << "Parallel(ms)"<< "\t" << "Optimized(ms)" << "\t"
+    cout << "N" << "\t" << "Serial(ms)" << "\t" << "Parallel(ms)"<< "\t" << "Optimized(ms)" << "\t"
          <<"SpeedUp "<< "\t" << "New SpeedUp " << "\t" <<"Gained SpeedUp"<< "\t" << endl;
     for(int n = 100 ; n < 1001; n+= 100){
 
@@ -63,18 +64,14 @@ int main(){
               ,sample_cnt_parallel = get_sample_count(std_parallel,mean_parallel)
               ,sample_cnt_optimized = get_sample_count(std_optimized,mean_optimized);
 
-        if(sample_cnt_serial>sample_cnt && sample_cnt_parallel>sample_cnt && sample_cnt_optimized>sample_cnt){
-            cout << "Accuracy of the results are not enough to give the 95% confidence level" << endl;
-            // Start Again.
-        }
-        else{
-            double speedUp = get_speedup(mean_parallel,mean_serial);
-            double speedUp_new = get_speedup(mean_optimized,mean_parallel);
-            double speedUp_gained = speedUp_new - speedUp;
+        
+        double speedUp = get_speedup(mean_parallel,mean_serial);
+        double speedUp_new = get_speedup(mean_optimized,mean_parallel);
+        double speedUp_gained = speedUp_new - speedUp;
 
-            cout << n << "\t" << mean_serial << "\t" << mean_parallel << "\t" << mean_optimized<< "\t"
-                 <<speedUp << "\t\t" <<speedUp_new<< "\t\t" <<speedUp_gained<< "\t" << endl;
-        }
+        printf("%d \t %lf \t %lf \t %lf \t %lf \t %lf \t %lf \t \n",
+            n,mean_serial,mean_parallel,mean_optimized,speedUp,speedUp_new,speedUp_gained);
+      
     }
     return 0;
 }

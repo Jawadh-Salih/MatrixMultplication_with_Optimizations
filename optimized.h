@@ -6,4 +6,5 @@
 #define CONCURRENT_LAB3_OPTIMIZED_H
 
 double optimized_matrix_mul(int n,double ** O,double ** A,double ** B);
+double optimized_matrix_mul_sse3(int n,double ** O,double ** A,double ** B);
 #endif //CONCURRENT_LAB3_OPTIMIZED_H
