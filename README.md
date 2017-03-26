@@ -10,7 +10,10 @@ Execute the program by running following command
 
 ``./concurrent_lab3 ``
 
-Note : 	Makefile has all the relevent libraries linked in the compile time. Refer it for more details.
-		Also please use a newest gcc compiler version to compile the code.
+Note : 	Makefile has all the relevent libraries linked in the compile time.Refer it for more details.
+		
+	Also please use a newest gcc compiler version to compile the code.
+	
+	Your computer must be supporting SSE3 inorder to run the program.
 
 
