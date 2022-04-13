@@ -1,4 +1,4 @@
-appname := concurrent_lab3
+appname := matrix_multiply
 
 CXX := g++
 
