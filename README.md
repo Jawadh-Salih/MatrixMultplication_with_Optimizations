@@ -8,7 +8,7 @@ First ``make`` the Project to compile it. Run the following command
 
 Execute the program by running following command
 
-``./matrix_mulyipy ``
+``./matrix_multiply ``
 
 Note : 	
 
